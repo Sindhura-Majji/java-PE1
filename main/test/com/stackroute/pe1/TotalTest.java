@@ -11,14 +11,12 @@ public class TotalTest {
     Total total;
     @Before
     public void setUp() {
-        System.out.println("Before");
         total = new Total();
     }
 
     @After
     public void tearDown() {
         total= null;
-        System.out.println("Aftre");
     }
     @Test
     public void givenOneStringShouldReturnSum() {
@@ -39,7 +37,7 @@ public class TotalTest {
         String result= total.total("23 4 p");
 
 //Assert
-        assertEquals("Error", result);
+        assertEquals("Character or null value not accepted", result);
 
     }
     @Test
@@ -50,7 +48,7 @@ public class TotalTest {
         String result= total.total("null");
 
 //Assert
-        assertEquals("Error", result);
+        assertEquals("Character or null value not accepted", result);
 
     }
 

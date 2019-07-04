@@ -6,7 +6,7 @@ public class Total {
     {
         int sum = 0;
 
-        String string = "";
+        String string = "", result="";
         String[] array = number.split(" ");
         int arr[] = new int[array.length];
         try {
@@ -15,14 +15,13 @@ public class Total {
 
             }
         } catch (Exception exception) {
-            string = "Error";
-            return string;
+            return  "Character or null value not accepted";
         }
-        for (int i = 0; i < array.length; i++) {
-            sum = arr[i] + sum;
+            for (int i = 0; i < array.length; i++) {
+                sum = arr[i] + sum;
 
+            }
+            result = "" + sum;
+            return result;
         }
-        string = "" + sum;
-        return (string);
-    }
 }

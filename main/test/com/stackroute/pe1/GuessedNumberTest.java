@@ -8,40 +8,38 @@ import static org.junit.Assert.*;
 
 public class GuessedNumberTest {
 
-    GuessedNumber num;
+    GuessedNumber guessedNumber;
     @Before
     public void setUp(){
-        System.out.println("Before");
-        num = new GuessedNumber();
+        guessedNumber = new GuessedNumber();
     }
 
     @After
     public void tearDown(){
-        System.out.println("After");
-        num = null;
+        guessedNumber = null;
     }
     @Test
     public void givenStringContainsTwoIntegersShouldReturnMatch(){
-//Arrange
-//Act
-        String result = num.find(22, 22);
-//Assert
+    //Arrange
+    //Act
+        String result = guessedNumber.find(22, 22);
+    //Assert
         assertEquals( "Number guessed matches original number", result);
     }
     @Test
     public void givenStringContainsTwoIntegersShouldReturnLesser(){
-//Arrange
-//Act
-        String result = num.find(50, 84);
-//Assert
+    //Arrange
+    //Act
+        String result = guessedNumber.find(50, 84);
+    //Assert
         assertEquals( "Number guessed is less than the original number", result);
     }
     @Test
     public void givenStringContainsTwoIntegersShouldReturnGreater(){
-//Arrange
-//Act
-        String result = num.find(60 , 24);
-//Assert
+    //Arrange
+    //Act
+        String result = guessedNumber.find(60 , 24);
+    //Assert
         assertEquals( "Number guessed is more than the original number", result);
     }
 

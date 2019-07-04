@@ -10,20 +10,18 @@ public class TomorJerryTest {
     TomorJerry tomorjerry;
     @Before
     public void setUp(){
-        System.out.println("Before");
         tomorjerry = new TomorJerry();
     }
 
     @After
     public void tearDown(){
-        System.out.println("After");
         tomorjerry = null;
     }
     @Test
     public void givenStringContainsOddIntegerShouldReturnTom(){
 //Arrange
 //Act
-        String result = tomorjerry.odd(21);
+        String result = tomorjerry.oddOrEven(21);
 //Assert
         assertEquals("Tom", result);
     }
@@ -31,7 +29,7 @@ public class TomorJerryTest {
     public void givenStringContainsEvenIntegerShouldReturnJerry(){
 //Arrange
 //Act
-        String result = tomorjerry.odd(26);
+        String result = tomorjerry.oddOrEven(26);
 //Assert
         assertEquals("Jerry", result);
     }
@@ -39,7 +37,7 @@ public class TomorJerryTest {
     public void givenStringContainsIntegerShouldReturnErrorMessage(){
 //Arrange
 //Act
-        String result = tomorjerry.odd(11);
+        String result = tomorjerry.oddOrEven(11);
 //Assert
         assertEquals("Number is not there between 20 to 30", result);
     }

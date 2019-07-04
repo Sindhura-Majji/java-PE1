@@ -12,21 +12,19 @@ public class NumberSeriesTest {
 
     @Before
     public void setUp() {
-        System.out.println("Before");
         numberSeries = new NumberSeries();
     }
 
     @After
     public void tearDown() {
         numberSeries = null;
-        System.out.println("After");
     }
 
     @Test
     public void givenStringContainsNumbersShouldReturnNumberSeries() {
         //Arrange
         //Act
-        String result = numberSeries.IterationNumbers(3);
+        String result = numberSeries.iterationNumbers(3);
         //Assert
         assertEquals("122333", result);
     }
@@ -35,8 +33,16 @@ public class NumberSeriesTest {
     public void givenStringContainsNumberShouldReturnErrorMessage() {
         //Arrange
         //Act
-        String result = numberSeries.IterationNumbers(0);
+        String result = numberSeries.iterationNumbers(0);
         //Assert
-        assertEquals("error", result);
+        assertEquals("Zero and negative numbers are not allowed", result);
+    }
+    @Test
+    public void givenStringContainsNegativeNumberShouldReturnErrorMessage() {
+        //Arrange
+        //Act
+        String result = numberSeries.iterationNumbers(-2);
+        //Assert
+        assertEquals("Zero and negative numbers are not allowed", result);
     }
 }

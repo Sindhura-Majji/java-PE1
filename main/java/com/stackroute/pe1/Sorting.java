@@ -1,66 +1,41 @@
 package com.stackroute.pe1;
-
+// method to sort an unordered to non-ascending order and calculate the sum of even numbers
 public class Sorting {
 
-    public class Result {
-        String sortedNumber;
-        String evenSum;
-        boolean isSumAboveLimit;
-    }
-
-    public Result sort(int number)
-    {
-        int tempnumber = number;
-        number = Math.abs(number);
-        Result result = new Result();
-        int temp = number;
-        int count = 0;
+    public static String sortingList(int[] array) {
+        int i, j, swap;
         int sum = 0;
-        int sortednumber = 0;
-        while (number > 0) //to get array length and evenSum
-        {
-            int remainder = number%10;
-            count++;
-            number = number/10;
-            if(remainder % 2 ==0)
-                sum = sum + remainder;
-        }
-
-        int intArr[]= new int[count];
-        for(int i=0; temp > 0; i++)
-        {
-            intArr[i] = temp%10;
-            temp = temp/10;
-        }
-
-        for(int i=0; i < count; i++)
-        {
-            for(int j=i; j < count; j++)
-            {
-                if(intArr[i] < intArr[j])
-                {
-                    temp = intArr[i];
-                    intArr[i] = intArr[j];
-                    intArr[j] = temp;
+        String s;
+        int n = array.length;
+        for (i = 0; i < n - 1; i++) {//sorting
+            for (j = i; j < n - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    swap = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = swap;
+                } else if (array[j] == array[j + 1]) {
+                    array[j] = array[j];
+                    array[j + 1] = array[j + 1];
                 }
+
             }
         }
 
-        for(int i=0; i<count; i++)
-        {
-            sortednumber = sortednumber*10 + intArr[i];
+        s = "sorted list of elements";
+        for (i = n - 1; i >= 0; i--)//sorting
+            System.out.println(array[i]);
+        System.out.println();
+        for (i = 0; i < n; i++) {
+            if (array[i] % 2 == 0) {
+                sum = sum + array[i];
+            }
         }
-
-        if(tempnumber < 0)
-        {
-            sortednumber = -sortednumber;
+        s = "sum of the even numbers is" + sum;//calculating the sum
+        if (sum > 15) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
         }
-
-        result.sortedNumber = "Sorted number in non-increasing order: " +sortednumber;
-        result.evenSum = "Sum of even numbers: "+ sum;
-        result.isSumAboveLimit = sum>15 ? true:false;
-
-        return result;
-
+        return s;
     }
 }

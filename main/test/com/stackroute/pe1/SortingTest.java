@@ -7,64 +7,35 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class SortingTest {
-
-    Sorting sorting;
-
+    Sorting sort;
+    String actualresult;
+    String expectedresult;
     @Before
-    public void setUp()
-    {
-        sorting = new Sorting();
+    public void setUp()throws Exception {
+        sort = new Sorting();
     }
 
     @After
-    public void tearDown()
-    {
-        sorting = null;
+    public void tearDown(){
+        sort = null;
     }
 
     @Test
-    public void givenNumberShouldReturnSortedNumberAndSumBelowLimit()
+    public void sortAndSumOfEvenNumbers()
     {
-        Sorting.Result result = sorting.sort(234534);
-
-        assertEquals("Sorted number in non-increasing order: "
-                +544332, result.sortedNumber);
-        assertEquals("Sum of even numbers: "+10, result.evenSum);
-        assertEquals(false,result.isSumAboveLimit);
+        actualresult=sort.sortingList(new int[]{10,20,30,40});
+        expectedresult = "sum of the even numbers is100";
+        assertEquals(expectedresult,actualresult);
     }
 
     @Test
-    public void givenNumberShouldReturnSortedNumberAndSumAboveLimit()
+    public void sortAndAddEvenNumbers()
     {
-        Sorting.Result result = sorting.sort(2346158);
-
-        assertEquals("Sorted number in non-increasing order: "
-                +8654321, result.sortedNumber);
-        assertEquals("Sum of even numbers: "+20, result.evenSum);
-        assertEquals(true,result.isSumAboveLimit);
+        actualresult= sort.sortingList(new int[]{9,10,6,9,2,20,40,28,7,3});
+        expectedresult="sum of the even numbers is106";
+        assertEquals(expectedresult,actualresult);
     }
 
-    @Test
-    public void givenZeroShouldReturnSortedNumberAndSumAboveLimit()
-    {
-        Sorting.Result result = sorting.sort(0);
-
-        assertEquals("Sorted number in non-increasing order: " +0,
-                result.sortedNumber);
-        assertEquals("Sum of even numbers: "+0, result.evenSum);
-        assertEquals(false,result.isSumAboveLimit);
-    }
-
-    @Test
-    public void givenNegativeShouldReturnSortedNumberAndSumAboveLimit()
-    {
-        Sorting.Result result = sorting.sort(-921346);
-
-        assertEquals("Sorted number in non-increasing order: " +
-                -964321, result.sortedNumber);
-        assertEquals("Sum of even numbers: "+12, result.evenSum);
-        assertEquals(false,result.isSumAboveLimit);
-    }
 
 
 

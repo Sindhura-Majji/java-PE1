@@ -4,23 +4,24 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class CharacterTest {
+public class CharacterTypeTest {
 
-    Character character;
+    CharacterType character;
+
     @org.junit.Before
-    public void setUp() {
-        System.out.println("Before");
-        character = new Character();
+    public void setUp()
+    {
+        character = new CharacterType();
 
     }
 
     @org.junit.After
-    public void tearDown() {
+    public void tearDown()
+    {
         character= null;
-        System.out.println("After");
     }
     @Test
-        public void givenStringContainsSmallLetterShouldReturnSmallletterString(){
+        public void givenStringContainsSmallLetterShouldReturnSmallLetterString(){
         //Arrange
         //Act
         String result = character.DisplayType('a');
@@ -28,7 +29,7 @@ public class CharacterTest {
         assertEquals("Small Letter", result);
     }
     @Test
-    public void givenStringContainsCapitalLetterShouldReturnCapitalletterString(){
+    public void givenStringContainsCapitalLetterShouldReturnCapitalLetterString(){
         //Arrange
         //Act
         String result = character.DisplayType('A');
@@ -36,7 +37,7 @@ public class CharacterTest {
         assertEquals("Capital Letter", result);
     }
     @Test
-    public void givenStringContainsDigitShouldRetutnDigitString(){
+    public void givenStringContainsDigitShouldReturnDigitString(){
         //Arrange
         //Act
         String result = character.DisplayType('5');
@@ -50,6 +51,14 @@ public class CharacterTest {
         String result = character.DisplayType('#');
         //Assert
         assertEquals("Special Character", result);
+    }
+    @Test
+    public void givenStringContainsEmptyCharacterShouldReturnErrorMessage(){
+        //Arrange
+        //Act
+        String result = character.DisplayType(' ');
+        //Assert
+        assertEquals("Empty character not allowed", result);
     }
 
 }

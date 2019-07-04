@@ -3,7 +3,7 @@ package com.stackroute.pe1;
 
 public class Palindrome {
 
-    public String CheckPalindrome(int num)
+    public String checkPalindrome(int num)
     {
         String result;
         int sum = 0, reminder, reverse = 0;

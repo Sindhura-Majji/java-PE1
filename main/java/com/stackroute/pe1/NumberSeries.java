@@ -2,10 +2,10 @@ package com.stackroute.pe1;
 
 public class NumberSeries
 {
-    public String IterationNumbers(int number) {
+    public String iterationNumbers(int number) {
         String str = "";
         if (number < 1) {
-            return "error";
+            str= "Zero and negative numbers are not allowed";
         } else {
 
             for (int i = 1; i <= number; i++) {

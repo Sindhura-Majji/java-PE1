@@ -10,14 +10,12 @@ public class VowelOrConsonantTest {
     VowelOrConsonant vowelorconsonant;
     @Before
     public void setUp() {
-        System.out.println("Before");
         vowelorconsonant = new VowelOrConsonant();
     }
 
     @After
     public void tearDown()  {
         vowelorconsonant = null;
-        System.out.println("After");
     }
     @Test
     public void givenStringContainsOneCharShouldReturnVowelMessage(){

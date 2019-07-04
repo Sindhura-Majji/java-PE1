@@ -10,7 +10,6 @@ public class PalindromeTest {
 
     @org.junit.Before
     public void setUp() {
-        System.out.println("Before");
         palindrome = new Palindrome();
 
     }
@@ -18,13 +17,12 @@ public class PalindromeTest {
     @org.junit.After
     public void tearDown() {
         palindrome= null;
-        System.out.println("After");
     }
     @Test
     public void givenStringContainsLesserNumberShouldReturnPalindromeString(){
         //Arrange
         //Act
-        String result = palindrome.CheckPalindrome(454);
+        String result = palindrome.checkPalindrome(454);
         //Assert
         assertEquals("454 is palindrome and sum of even numbers is lesser than 25", result);
     }
@@ -32,7 +30,7 @@ public class PalindromeTest {
     public void givenStringContainsGreaterNumberShouldReturnPalindromeString(){
         //Arrange
         //Act
-        String result = palindrome.CheckPalindrome(6789876);
+        String result = palindrome.checkPalindrome(6789876);
         //Assert
         assertEquals("6789876 is palindrome and sum of even numbers is greater than 25", result);
     }
@@ -40,7 +38,7 @@ public class PalindromeTest {
     public void givenStringContainsNotPalindromeNumberShouldReturnNotPalindromeString(){
         //Arrange
         //Act
-        String result = palindrome.CheckPalindrome(123);
+        String result = palindrome.checkPalindrome(123);
         //Assert
         assertEquals("Not a palindrome", result);
     }

@@ -8,7 +8,7 @@ public class StringReverse
         String reverse = "";
         int length = original.length();
         if(original == " ") {
-            reverse= "Null not allowed";
+            reverse= "Empty String not allowed";
         }
         for (int i = length - 1 ; i >= 0 ; i--)
         {

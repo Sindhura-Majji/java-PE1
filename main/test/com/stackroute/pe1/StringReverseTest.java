@@ -11,7 +11,6 @@ public class StringReverseTest {
 
     @Before
     public void setUp() {
-        System.out.println("Before");
         stringreverse = new StringReverse();
 
     }
@@ -19,7 +18,6 @@ public class StringReverseTest {
     @After
     public void tearDown() {
         stringreverse = null;
-        System.out.println("After");
     }
 
     @Test
@@ -38,7 +36,7 @@ public class StringReverseTest {
         //Act
         String reverse = stringreverse.ReverseString(" ");
         //Assert
-        assertEquals("Null not allowed", reverse);
+        assertEquals("Empty String not allowed", reverse);
     }
     @Test
     public void givenStringContainsNumericStringShouldReverseString(){
